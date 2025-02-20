@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Chapitre 7 - Target Object Identification</title>
+	<style>
+	    #intro:hover{
+	        color:red;
+	    }
+	</style>
+</head>
+<body>
+	<h1>Chapitre 7 - Target Object Identification</h1>
+
+	<p id="intro" class="para intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor ligula id turpis condimentum suscipit. Vivamus at odio a ex malesuada imperdiet. Mauris pretium massa dolor, vitae rutrum ante vehicula id. Nullam pellentesque bibendum ultricies. Aenean at elementum orci. In eget iaculis augue. Duis euismod, nibh non euismod ullamcorper, justo nunc egestas risus, vel vehicula orci augue sed nisi. Aenean suscipit eros vitae gravida porttitor. Aliquam vestibulum non ante quis sollicitudin. Aenean elementum orci nec elit elementum vulputate. Aenean rhoncus dui sed mi convallis elementum sit amet quis quam. Ut ullamcorper est ac efficitur maximus. Aenean luctus tellus arcu, id hendrerit ipsum sodales sit amet. Proin sit amet ullamcorper odio, et egestas magna. Morbi commodo sodales pharetra.</p>
+
+
+	<form id="contact" class="formulaire" onsubmit="return false;">
+		<input type="text" name="user" id="user">
+		<input type="text" name="message">
+		<!--<input type="submit">-->
+		<button id="send" type="button">Envoyer votre message</button>
+		<div id="zone-reponse-formulaire"></div>
+	</form>
+
+	<a href="chapitre8.html">Pour aller plus loin</a>
+
+	<script type="text/javascript">
+		button = document.getElementById("send")
+		button.addEventListener("click", checkInput);
+		function checkInput(){
+			var msg = "L'utilisateur doit être indiqué";
+  			if(document.getElementById("user").value != ""){
+  				// on clear le formulaire
+  				document.getElementById("user").value = "";
+  				document.getElementsByName("message")[0].value = "";
+  				msg = "Message envoyé"
+  			}
+  			var pMsg = document.createTextNode(msg);
+  			document.getElementById("zone-reponse-formulaire").appendChild(pMsg);
+		}
+	</script>
+</body>
+</html>
